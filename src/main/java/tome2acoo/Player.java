@@ -3,20 +3,20 @@ package tome2acoo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player {
+public class Player{
 	int id;
 	String firstName;
 	String lastName;
 	int rank;
-	int prestige;
-	String sos;
+	int points;
+	float sos;
 	String corp;
 	String runner;
 	List<Integer> matches = new ArrayList<>();
 	
 	
-	public void addPrestige(int points) {
-		prestige += points;
+	public void addPoints(int points) {
+		this.points += points;
 		addMatch(points);
 	}
 	
@@ -30,10 +30,11 @@ public class Player {
 	
 	public float averagePoints(){
 		float total = 0;
-		int count = 1;
+		int count = 0;
 		for(int result : matches){
-			total += result;
 			count++;
+			total += result;
+			
 		}
 		return total/count;
 	}
@@ -62,16 +63,16 @@ public class Player {
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
-	public int getPrestige() {
-		return prestige;
+	public int getPoints() {
+		return points;
 	}
-	public void setPrestige(int prestige) {
-		this.prestige = prestige;
+	public void setPoints(int points) {
+		this.points = points;
 	}
-	public String getSos() {
+	public float getSos() {
 		return sos;
 	}
-	public void setSos(String sos) {
+	public void setSos(float sos) {
 		this.sos = sos;
 	}
 	public String getCorp() {
@@ -86,4 +87,5 @@ public class Player {
 	public void setRunner(String runner) {
 		this.runner = runner;
 	}
+
 }

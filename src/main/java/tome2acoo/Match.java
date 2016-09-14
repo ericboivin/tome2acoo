@@ -2,20 +2,31 @@ package tome2acoo;
 
 public class Match {
 	private int id;
-	private int player1;
-	private int player2;
-	private int scorePlayer1;
-	private int scorePlayer2;
-	public int getScorePlayer1() {
+	private int round;
+	private MatchResult scorePlayer1;
+	private MatchResult scorePlayer2;
+	
+	public MatchResult getOpponentResult(int player_id){
+		if (scorePlayer2 == null){
+			return null; //Bye
+		}
+		if (scorePlayer1.getParticipantPK() == player_id){
+			return scorePlayer2;
+		}else{
+			return scorePlayer1;
+		}
+	}
+	
+	public MatchResult getScorePlayer1() {
 		return scorePlayer1;
 	}
-	public void setScorePlayer1(int scorePlayer1) {
+	public void setScorePlayer1(MatchResult scorePlayer1) {
 		this.scorePlayer1 = scorePlayer1;
 	}
-	public int getScorePlayer2() {
+	public MatchResult getScorePlayer2() {
 		return scorePlayer2;
 	}
-	public void setScorePlayer2(int scorePlayer2) {
+	public void setScorePlayer2(MatchResult scorePlayer2) {
 		this.scorePlayer2 = scorePlayer2;
 	}
 	public int getId() {
@@ -24,16 +35,10 @@ public class Match {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getPlayer1() {
-		return player1;
+	public int getRound() {
+		return round;
 	}
-	public void setPlayer1(int player1) {
-		this.player1 = player1;
-	}
-	public int getPlayer2() {
-		return player2;
-	}
-	public void setPlayer2(int player2) {
-		this.player2 = player2;
+	public void setRound(int round) {
+		this.round = round;
 	}
 }

@@ -3,7 +3,6 @@ package tome2acoo;
 public class MatchResult {
 	private int id;
 	private int participant_pk;
-	private int match_pk;
 	private int points_earned;
 	public int getId() {
 		return id;
@@ -16,12 +15,6 @@ public class MatchResult {
 	}
 	public void setParticipantPK(int participant_pk) {
 		this.participant_pk = participant_pk;
-	}
-	public int getMatchPK() {
-		return match_pk;
-	}
-	public void setMatchPK(int match_pk) {
-		this.match_pk = match_pk;
 	}
 	public int getPoints_earned() {
 		return points_earned;
